@@ -87,7 +87,7 @@ setup_asdf_source_registry() {
 # install_script <path> <lines...>
 install_script() {
     path=$1; shift
-    tmp=$(mktemp)
+    tmp=$(mktemp /tmp/tmp.XXXXXXXXXX)
 
     echo "#!/bin/sh" > "$tmp"
     for line; do
