@@ -122,9 +122,16 @@ install_abcl() {
     cim use abcl-system --default
 }
 
-SBCL_TARBALL_URL1="http://prdownloads.sourceforge.net/sbcl/sbcl-1.2.6-x86-64-linux-binary.tar.bz2"
-SBCL_TARBALL_URL2="http://common-lisp.net/~loliveira/tarballs/ci/sbcl-1.2.6-x86-64-linux-binary.tar.bz2"
-SBCL_TARBALL_URL3="http://kerno.org/~luis/ci/sbcl-1.2.6-x86-64-linux-binary.tar.bz2"
+case "$TRAVIS_OS_NAME" in
+    osx)
+        SBCL_TARBALL_URL1="http://prdownloads.sourceforge.net/sbcl/sbcl-1.1.8-x86-64-darwin-binary.tar.bz2"
+        ;;
+    linux|*)
+        SBCL_TARBALL_URL1="http://prdownloads.sourceforge.net/sbcl/sbcl-1.2.6-x86-64-linux-binary.tar.bz2"
+        SBCL_TARBALL_URL2="http://common-lisp.net/~loliveira/tarballs/ci/sbcl-1.2.6-x86-64-linux-binary.tar.bz2"
+        SBCL_TARBALL_URL3="http://kerno.org/~luis/ci/sbcl-1.2.6-x86-64-linux-binary.tar.bz2"
+        ;;
+esac
 SBCL_TARBALL="sbcl.tar.bz2"
 SBCL_DIR="$HOME/sbcl"
 
@@ -137,8 +144,16 @@ install_sbcl() {
     cim use sbcl-system --default
 }
 
-SBCL32_TARBALL_URL1="http://common-lisp.net/~loliveira/tarballs/sbcl-1.2.6-x86-linux-binary.tar.bz2"
-SBCL32_TARBALL_URL2="http://kerno.org/~luis/ci/sbcl-1.2.6-x86-linux-binary.tar.bz2"
+case "$TRAVIS_OS_NAME" in
+    osx)
+        SBCL32_TARBALL_URL1="http://prdownloads.sourceforge.net/sbcl/sbcl-1.1.6-x86-darwin-binary.tar.bz2"
+        ;;
+    linux|*)
+        SBCL32_TARBALL_URL1="http://common-lisp.net/~loliveira/tarballs/sbcl-1.2.6-x86-linux-binary.tar.bz2"
+        SBCL32_TARBALL_URL2="http://kerno.org/~luis/ci/sbcl-1.2.6-x86-linux-binary.tar.bz2"
+        ;;
+esac
+
 SBCL32_TARBALL="sbcl32.tar.bz2"
 SBCL32_DIR="$HOME/sbcl32"
 
@@ -154,9 +169,16 @@ install_sbcl32() {
     cim use sbcl-system --default
 }
 
-CCL_TARBALL_URL1="ftp://ftp.clozure.com/pub/release/1.10/ccl-1.10-linuxx86.tar.gz"
-CCL_TARBALL_URL2="http://kerno.org/~luis/ci/ccl-1.10-linuxx86.tar.gz"
-CCL_TARBALL_URL3="http://common-lisp.net/~loliveira/tarballs/ci/ccl-1.10-linuxx86.tar.gz"
+case "$TRAVIS_OS_NAME" in
+    osx)
+        CCL_TARBALL_URL1="ftp://ftp.clozure.com/pub/release/1.10/ccl-1.10-darwinx86.tar.gz"
+        ;;
+    linux|*)
+        CCL_TARBALL_URL1="ftp://ftp.clozure.com/pub/release/1.10/ccl-1.10-linuxx86.tar.gz"
+        CCL_TARBALL_URL2="http://kerno.org/~luis/ci/ccl-1.10-linuxx86.tar.gz"
+        CCL_TARBALL_URL3="http://common-lisp.net/~loliveira/tarballs/ci/ccl-1.10-linuxx86.tar.gz"
+        ;;
+esac
 CCL_TARBALL="ccl.tar.gz"
 CCL_DIR="$HOME/ccl"
 CCL_SCRIPT_PREFIX="/usr/local/bin"
