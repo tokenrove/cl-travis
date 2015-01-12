@@ -105,7 +105,17 @@ ABCL_DIR="$HOME/abcl"
 ABCL_SCRIPT="/usr/local/bin/abcl"
 
 install_abcl() {
-    sudo apt-get install default-jre
+    case "$TRAVIS_OS_NAME" in
+        linux) sudo apt-get install default-jre ;;
+        osx)
+            brew install caskroom/cask/brew-cask
+            brew cask install java
+            ;;
+        *)
+            echo "Unrecognised Travis OS: '$TRAVIS_OS_NAME'"
+            exit 1
+            ;;
+    esac
     get "$ABCL_TARBALL" "$ABCL_TARBALL_URL1" "$ABCL_TARBALL_URL2"
     unpack -z "$ABCL_TARBALL" "$ABCL_DIR"
 
@@ -223,7 +233,14 @@ install_clisp() {
         sudo ln -s /usr/bin/clisp /usr/local/bin/clisp32
     else
         echo "Installing CLISP..."
-        sudo apt-get install clisp
+        case "$TRAVIS_OS_NAME" in
+            linux) sudo apt-get install clisp ;;
+            osx) brew install clisp ;;
+            *)
+                echo "Unrecognised Travis OS: '$TRAVIS_OS_NAME'"
+                exit 1
+                ;;
+        esac
     fi
     cim use clisp-system --default
 }
@@ -277,7 +294,14 @@ install_cim() {
 (
     cd "$HOME"
 
-    sudo apt-get update
+    case "$TRAVIS_OS_NAME" in
+        linux) sudo apt-get update ;;
+        osx) brew update ;;
+        *)
+            echo "Unrecognised Travis OS: '$TRAVIS_OS_NAME'"
+            exit 1
+            ;;
+    esac
     install_cim
     install_asdf
 
