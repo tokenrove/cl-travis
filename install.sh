@@ -124,7 +124,7 @@ install_abcl() {
 
 case "$TRAVIS_OS_NAME" in
     osx)
-        SBCL_TARBALL_URL1="http://prdownloads.sourceforge.net/sbcl/sbcl-1.1.8-x86-64-darwin-binary.tar.bz2"
+        SBCL_TARBALL_URL1="http://kerno.org/~luis/ci/sbcl-1.2.6-x86-64-darwin-binary.tar.bz2"
         ;;
     linux|*)
         SBCL_TARBALL_URL1="http://prdownloads.sourceforge.net/sbcl/sbcl-1.2.6-x86-64-linux-binary.tar.bz2"
