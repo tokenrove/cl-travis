@@ -1,5 +1,9 @@
 language: lisp
 
+os:
+  - linux
+  - osx
+
 env:
   matrix:
     - LISP=abcl
