@@ -172,6 +172,7 @@ install_sbcl32() {
 case "$TRAVIS_OS_NAME" in
     osx)
         CCL_TARBALL_URL1="ftp://ftp.clozure.com/pub/release/1.10/ccl-1.10-darwinx86.tar.gz"
+        CCL_TARBALL_URL2="http://kerno.org/~luis/ci/ccl-1.10-darwinx86.tar.gz"
         ;;
     linux|*)
         CCL_TARBALL_URL1="ftp://ftp.clozure.com/pub/release/1.10/ccl-1.10-linuxx86.tar.gz"
