@@ -124,7 +124,8 @@ install_abcl() {
 
 case "$TRAVIS_OS_NAME" in
     osx)
-        SBCL_TARBALL_URL1="http://kerno.org/~luis/ci/sbcl-1.2.6-x86-64-darwin-binary.tar.bz2"
+        SBCL_TARBALL_URL1="http://common-lisp.net/~loliveira/tarballs/ci/sbcl-1.2.6-x86-64-darwin-binary.tar.bz2"
+        SBCL_TARBALL_URL2="http://kerno.org/~luis/ci/sbcl-1.2.6-x86-64-darwin-binary.tar.bz2"
         ;;
     linux|*)
         SBCL_TARBALL_URL1="http://prdownloads.sourceforge.net/sbcl/sbcl-1.2.6-x86-64-linux-binary.tar.bz2"
@@ -146,10 +147,11 @@ install_sbcl() {
 
 case "$TRAVIS_OS_NAME" in
     osx)
-        SBCL32_TARBALL_URL1="http://prdownloads.sourceforge.net/sbcl/sbcl-1.1.6-x86-darwin-binary.tar.bz2"
+        SBCL32_TARBALL_URL1="http://common-lisp.net/~loliveira/tarballs/ci/sbcl-1.2.6-x86-darwin-binary.tar.bz2"
+        SBCL32_TARBALL_URL2="http://kerno.org/~luis/ci/sbcl-1.2.6-x86-darwin-binary.tar.bz2"
         ;;
     linux|*)
-        SBCL32_TARBALL_URL1="http://common-lisp.net/~loliveira/tarballs/sbcl-1.2.6-x86-linux-binary.tar.bz2"
+        SBCL32_TARBALL_URL1="http://common-lisp.net/~loliveira/tarballs/ci/sbcl-1.2.6-x86-linux-binary.tar.bz2"
         SBCL32_TARBALL_URL2="http://kerno.org/~luis/ci/sbcl-1.2.6-x86-linux-binary.tar.bz2"
         ;;
 esac
@@ -172,12 +174,13 @@ install_sbcl32() {
 case "$TRAVIS_OS_NAME" in
     osx)
         CCL_TARBALL_URL1="ftp://ftp.clozure.com/pub/release/1.10/ccl-1.10-darwinx86.tar.gz"
+        CCL_TARBALL_URL3="http://common-lisp.net/~loliveira/tarballs/ci/ccl-1.10-darwinx86.tar.gz"
         CCL_TARBALL_URL2="http://kerno.org/~luis/ci/ccl-1.10-darwinx86.tar.gz"
         ;;
     linux|*)
         CCL_TARBALL_URL1="ftp://ftp.clozure.com/pub/release/1.10/ccl-1.10-linuxx86.tar.gz"
-        CCL_TARBALL_URL2="http://kerno.org/~luis/ci/ccl-1.10-linuxx86.tar.gz"
         CCL_TARBALL_URL3="http://common-lisp.net/~loliveira/tarballs/ci/ccl-1.10-linuxx86.tar.gz"
+        CCL_TARBALL_URL2="http://kerno.org/~luis/ci/ccl-1.10-linuxx86.tar.gz"
         ;;
 esac
 CCL_TARBALL="ccl.tar.gz"
@@ -231,7 +234,7 @@ install_cmucl() {
     # XXX: no CIM support for CMUCL
 }
 
-ECL_TARBALL_URL1="http://common-lisp.net/~loliveira/tarballs/ecl-13.5.1-linux-amd64.tar.gz"
+ECL_TARBALL_URL1="http://common-lisp.net/~loliveira/tarballs/ci/ecl-13.5.1-linux-amd64.tar.gz"
 ECL_TARBALL_URL2="http://kerno.org/~luis/ci/ecl-13.5.1-linux-amd64.tar.gz"
 ECL_TARBALL="ecl.tar.gz"
 
