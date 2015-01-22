@@ -29,6 +29,8 @@ matrix:
       env: LISP=ecl
     - os: osx
       env: LISP=cmucl
+    - os: osx
+      env: LISP=clisp32
 
 # either use a local install.sh script or install it via curl. Feel
 # free to simplify this section in your own .travis.yml file.
