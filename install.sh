@@ -31,7 +31,7 @@ unpack() {
 install_i386_arch() {
     # Travis-CI's dpkg doesn't seem to know about --add-architecture.
     #sudo dpkg --add-architecture i386
-    sudo apt-get install -y libc6:i386
+    sudo apt-get install -y libc6-i386
 }
 
 # add_to_lisp_rc <string>
